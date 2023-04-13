@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "vs_rest",
+  "description": "Represents simple REST-API with nodejs and MySQL based on the assignment given by Mario Oettler in the Bachelor course \"Blockchain und verteilte Systeme\" at the University of Applied Sciences Mittweida.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Nicole Gottschall",
+  "license": "ISC"
+}
