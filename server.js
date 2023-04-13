@@ -2,6 +2,9 @@ var express  = require('express');
 var path     = require('path');
 var app = express();
 
+var userList = require('./userList');
+var mysql = require('mysql');
+
 
 
 app.listen(3000);
@@ -11,22 +14,11 @@ app.route('/')
     res.sendFile(path.join(__dirname, './','index.html'));
   })
 
-app.route('/user').get(function(req, res){
+app.route('/users')
+    .get(userList.list_all_users)
+    .post(userList.create_user);
 
-})
-
-app.route('/user').post(function(req,res){
-
-})
-
-app.route('/user/:userId').delete(function(req,res){
-
-})
-
-app.route('/user/:userId').get(function(req,res){
-
-})
-
-app.route('/user/:userId').put(function(req,res){
-    
-})
+app.route('/users/:userId')
+    .delete(userList.delete_user)
+    .get(userList.show_user)
+    .put(userList.update_user);
